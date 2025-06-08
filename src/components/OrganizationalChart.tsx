@@ -34,7 +34,7 @@ const OrganizationalChart = () => {
                 <FaGraduationCap className="text-2xl mr-2" />
                 <p className="font-bold text-xl">BAC</p>
               </div>
-              <p className="text-sm">Diplôme d'études secondaires</p>
+              <p className="text-sm">Diplôme d&apos;études secondaires</p>
             </div>
 
             {/* Vertical Line */}
@@ -111,7 +111,7 @@ const OrganizationalChart = () => {
                 <FaBriefcase className="text-2xl mr-2" />
                 <p className="font-bold text-xl">INGÉNIEUR / MANAGER</p>
               </div>
-              <p className="text-sm">Écoles d'ingénieurs et de commerce</p>
+              <p className="text-sm">Écoles d&apos;ingénieurs et de commerce</p>
             </div>
           </div>
         </div>

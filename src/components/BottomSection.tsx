@@ -15,9 +15,9 @@ const BottomSection = () => {
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">Mot du bo9alwa</h3>
               <p className="text-gray-700 leading-relaxed">
                 Bienvenue sur le site de notre CPGE. Notre mission est de préparer nos étudiants à intégrer 
-                les meilleures écoles d'ingénieurs en leur offrant un enseignement de qualité, un encadrement 
-                personnalisé et un environnement propice à l'excellence académique. Notre équipe pédagogique 
-                expérimentée s'engage à développer le potentiel de chaque étudiant pour lui permettre de 
+                les meilleures écoles d&apos;ingénieurs en leur offrant un enseignement de qualité, un encadrement 
+                personnalisé et un environnement propice à l&apos;excellence académique. Notre équipe pédagogique 
+                expérimentée s&apos;engage à développer le potentiel de chaque étudiant pour lui permettre de 
                 réussir dans son parcours.
               </p>
               <div className="mt-6 flex items-center">
