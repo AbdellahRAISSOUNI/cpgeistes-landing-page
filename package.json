@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "cloudinary": "^1.41.0",
     "dotenv": "^16.3.1",
+    "framer-motion": "^12.19.1",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.292.0",
     "mongodb": "^6.2.0",

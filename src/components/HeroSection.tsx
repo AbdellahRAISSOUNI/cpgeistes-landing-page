@@ -14,8 +14,8 @@ const HeroSection = () => {
                 src="/logo.jpg" 
                 alt="CPGEISTES Logo" 
                 className="h-32 w-auto"
-              />
-            </div>
+                />
+              </div>
             
             <div className="pr-14">
               <p className="text-sm leading-relaxed mb-4">
