@@ -4,5 +4,10 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "env": {
+    "MONGODB_URI": "mongodb+srv://dellotrilloabdellah:abdellah123@cpgeistes.950b6cy.mongodb.net/",
+    "NEXTAUTH_URL": "https://cpgeistes-site.vercel.app",
+    "NEXTAUTH_SECRET": "aCvG6$hJkL7*pQrS9#tUvWxYz2@4BdE8F"
+  }
 } 

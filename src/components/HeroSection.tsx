@@ -1,59 +1,48 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Image from 'next/image';
-
-const forumImages = [
-  '/images/real/forum-event.jpg',
-  '/images/real/classroom.jpg',
-  '/images/real/engineering-students.jpg',
-];
-
 const HeroSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => 
-        prevIndex === forumImages.length - 1 ? 0 : prevIndex + 1
-      );
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section className="bg-gradient-to-b from-white to-gray-50 py-12">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row items-center gap-8">
-          {/* Left side - Forum Images */}
-          <div className="w-full md:w-1/2 relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-            {forumImages.map((src, index) => (
-              <div
-                key={src}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                }`}
-              >
-                <Image
-                  src={src}
-                  alt={`Forum image ${index + 1}`}
-                  fill
-                  className="object-cover"
-                  priority={index === 0}
-                />
-              </div>
-            ))}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-              <h2 className="text-white text-2xl font-semibold">Forums des Grandes Écoles</h2>
-              <p className="text-white/90 mt-2">
-                Rencontrez les représentants des écoles et découvrez votre futur parcours
+        <div className="flex flex-col lg:flex-row items-stretch gap-6">
+          {/* Left side - CPGEISTES Description */}
+          <div className="w-full lg:w-2/3 relative bg-red-600 rounded-lg shadow-xl p-8 text-white font-['Inter',sans-serif]">
+            {/* Logo positioned to be half inside, half outside the top-right corner */}
+            <div className="absolute -top-8 -right-8">
+              <img 
+                src="/logo.jpg" 
+                alt="CPGEISTES Logo" 
+                className="h-32 w-auto"
+              />
+            </div>
+            
+            <div className="pr-14">
+              <p className="text-sm leading-relaxed mb-4">
+                <span className="text-xl font-bold">CPGEISTES est</span> la plus grande communauté et plateforme dédiée aux étudiants des Classes Préparatoires marocaines. Reconnue, suivie et gérée directement par les étudiants, elle est construite par eux, pour eux.
               </p>
+              
+              <p className="text-sm leading-relaxed mb-4">
+                Pourquoi tant de succès ? Parce que CPGE est un univers complexe et exigeant, un véritable matrix où l'entraide devient une nécessité. C'est de ce besoin qu'est né CPGEISTES : une plateforme collaborative où les étudiants partagent ressources, conseils et informations clés pour briller aux concours et intégrer les meilleures Grandes Écoles au Maroc comme en France.
+              </p>
+              
+              <p className="text-sm leading-relaxed mb-4 font-semibold">
+                Notre mission : connecter, orienter et élever la communauté prépa vers l'excellence.
+              </p>
+              
+              <div className="space-y-1">
+                <p className="text-sm">
+                  📌 Rejoignez-nous et devenez, vous aussi, membre de l'élite étudiante.
+                </p>
+                <p className="text-sm">
+                  📈 Ensemble, visons le top des classements et l'avenir que vous méritez.
+                </p>
+              </div>
             </div>
           </div>
 
           {/* Right side - Login Box */}
-          <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+          <div className="w-full lg:w-1/3 bg-white rounded-lg shadow-xl p-6 lg:p-8 border border-gray-100 font-['Inter',sans-serif]">
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-gray-800">LOGIN BOX</h2>
               <div className="h-1 w-16 bg-red-500 mx-auto mt-2"></div>

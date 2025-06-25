@@ -2,18 +2,22 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaChevronDown } from 'react-icons/fa';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobileEcolesOpen, setIsMobileEcolesOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleMobileEcoles = () => {
+    setIsMobileEcolesOpen(!isMobileEcolesOpen);
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm">
+    <header className="sticky top-0 z-50 bg-[#fafafa] shadow-sm">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Mobile menu button */}
@@ -48,18 +52,16 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-1 flex items-center justify-center md:justify-start">
             <Link href="/" className="flex items-center">
-              <div className="relative h-16 w-16 mr-2">
-                <Image
-                  src="/images/cpge-harvard-logo.svg"
-                  alt="CPGE Logo"
-                  fill
-                  className="object-contain"
-                  priority
+              <div className="flex items-center">
+                <img 
+                  src="/logo.jpg" 
+                  alt="CPGEISTES Logo" 
+                  className="h-24 w-auto mr-3"
                 />
-              </div>
-              <div className="flex flex-col">
-                <span className="text-xl font-semibold text-gray-800">CPGEISTES</span>
-                <span className="text-xs text-gray-500">Classes Préparatoires aux Grandes Écoles</span>
+                <div className="flex flex-col">
+                  <span className="text-xl font-semibold text-gray-800">CPGEISTES</span>
+                  <span className="text-xs text-gray-500">Classes Préparatoires aux Grandes Écoles</span>
+                </div>
               </div>
             </Link>
           </div>
@@ -69,9 +71,31 @@ const Header = () => {
             <Link href="/" className="text-gray-700 hover:text-red-600 transition-colors">
               Accueil
             </Link>
-            <Link href="/ecole" className="text-gray-700 hover:text-red-600 transition-colors">
-              École
-            </Link>
+            
+            {/* Écoles Dropdown - Now using hover instead of click */}
+            <div className="relative group">
+              <div className="flex items-center text-gray-700 hover:text-red-600 transition-colors cursor-pointer">
+                Écoles
+                <FaChevronDown className="ml-1 h-3 w-3" />
+              </div>
+              
+              {/* Dropdown menu that appears on hover */}
+              <div className="absolute left-0 mt-1 w-48 bg-white rounded-md shadow-lg py-1 z-10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 ease-in-out">
+                <Link 
+                  href="/ecoles/centres-prepa" 
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600"
+                >
+                  Centres de prépa
+                </Link>
+                <Link 
+                  href="/ecoles/filieres-prepa" 
+                  className="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600"
+                >
+                  Filières de prépa
+                </Link>
+              </div>
+            </div>
+            
             <Link href="/bibliotheque" className="text-gray-700 hover:text-red-600 transition-colors">
               Bibliothèque
             </Link>
@@ -113,11 +137,33 @@ const Header = () => {
                   Accueil
                 </Link>
               </li>
+              
+              {/* Mobile Écoles Dropdown */}
               <li>
-                <Link href="/ecole" className="block px-3 py-2 rounded-md hover:bg-gray-100">
-                  École
-                </Link>
+                <button 
+                  onClick={toggleMobileEcoles}
+                  className="flex items-center w-full text-left px-3 py-2 rounded-md hover:bg-gray-100"
+                >
+                  Écoles
+                  <FaChevronDown className={`ml-1 h-3 w-3 transition-transform ${isMobileEcolesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {isMobileEcolesOpen && (
+                  <ul className="pl-6 mt-1 space-y-1">
+                    <li>
+                      <Link href="/ecoles/centres-prepa" className="block px-3 py-2 rounded-md hover:bg-gray-100">
+                        Centres de prépa
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/ecoles/filieres-prepa" className="block px-3 py-2 rounded-md hover:bg-gray-100">
+                        Filières de prépa
+                      </Link>
+                    </li>
+                  </ul>
+                )}
               </li>
+              
               <li>
                 <Link href="/bibliotheque" className="block px-3 py-2 rounded-md hover:bg-gray-100">
                   Bibliothèque

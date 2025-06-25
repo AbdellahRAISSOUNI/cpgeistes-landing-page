@@ -12,7 +12,7 @@ const BottomSection = () => {
           <div className="w-full md:w-2/3 relative">
             <div className="bg-gray-100 p-8 rounded-lg shadow-sm relative">
               <div className="absolute top-6 right-0 h-4 w-4 bg-gray-100 transform rotate-45 translate-x-2"></div>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Mot du bo9alwa</h3>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Mot du Fondateur</h3>
               <p className="text-gray-700 leading-relaxed">
                 Bienvenue sur le site de notre CPGE. Notre mission est de préparer nos étudiants à intégrer 
                 les meilleures écoles d&apos;ingénieurs en leur offrant un enseignement de qualité, un encadrement 
